@@ -1,37 +1,30 @@
 #include <iostream>
-#include <math.h>
-
+#include <cmath>
 using namespace std;
 
-float controlFormula(float x) {
-	float result;
+int main()
+{
+    double x, E;
+    cout << "Enter num: ";
+    cin >> x;
+    cout << "Enter error value 'E': ";
+    cin >> E;
 
-	result = 2. * pow(sin(x), 2);
+    double a = (2 * x) * (2 * x) / (2.0);
+    double sum = a;
+    int n = 2;
+    double an = a;
 
-	return result;
-}
+    do {
+        an *= (-1) * (2 * x) * (2 * x) / ((2 * n - 1) * (2 * n));
+        sum += an;
+        n++;
+    } while (abs(an) > E);
 
-float rowSum(float x) {
-	float sum = 1, e = 0;
-	int i = 0;
+    double control = 2. * pow(sin(x), 2);
 
-	cout << "Enter num 'E': ";
-	cin >> e;
+    cout << "Sum of rows equals: " << sum << endl;
+    cout << "Control formula equals: " << control << endl;
 
-	while (e < abs(sum)) {
-
-		i++;
-		sum *= pow(-1, i + 1) * (pow(2 * x, 2)) / (((2. * i) + 1.) * ((2. * i) + 2.));
-
-	}
-
-	return sum;
-}
-
-int main() {
-	float x;
-	
-	cout << "Enter num: ";
-	cin >> x;
-	cout << "Sum of rows equals: " << rowSum(x) << '\n' << "Control formula equals: " << controlFormula(x);
+    return 0;
 }

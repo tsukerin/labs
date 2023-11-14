@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\n0ves\source\repos\lab2\lab2\main.cpp(9,14): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\n0ves\source\repos\lab2\lab2\main.cpp(24,43): warning C4244: *=: преобразование "double" в "float", возможна потеря данных
+  lab2.vcxproj -> C:\Users\n0ves\source\repos\lab2\x64\Debug\lab2.exe
